@@ -4,22 +4,19 @@
 class Image
 
   def initialize(array)
-    @row1 = array[0][0..3].join
-    @row2 = array[1][0..3].join
-    @row3 = array[2][0..3].join
-    @row4 = array[3][0..3].join
+    @array = array
   end
 
   def output_image
-    puts @row1
-    puts @row2
-    puts @row3
-    puts @row4
+    # loop through the argument array to access each row
+    @array.each do |row|
+      # transform from array to string and display row
+      puts row.join
+    end
   end
-
 end
 
-# Your goal is to have the following code work:
+
 image = Image.new([
   [0, 0, 0, 0],
   [0, 1, 0, 0],
@@ -27,3 +24,4 @@ image = Image.new([
   [0, 0, 0, 0]
 ])
 image.output_image 
+
